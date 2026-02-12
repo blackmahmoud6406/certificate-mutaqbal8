@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1b2129;
+    color: white;
+    font-family: system-ui, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* الخلفية */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: #1b2129;
+    background-image: repeating-linear-gradient(45deg, rgba(231, 177, 68, 0.1) 0px, rgba(231, 177, 68, 0.1) 2px, rgba(45, 89, 156, 0.1) 2px, transparent 40px), repeating-linear-gradient(-45deg, rgba(231, 177, 68, 0.1) 0px, rgba(231, 177, 68, 0.1) 2px, rgba(45, 89, 156, 0.1) 2px, transparent 40px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* رفع المحتوى فوق الخلفية */
+
+header,
+.hero,
+.magazine,
+.black-footer {
+    position: relative;
+    z-index: 5;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 40px;
+    padding: 15px 40px;
+    border: 2px solid #e7b144;
+    border-radius: 12px;
+    background: #1b2129;
+}
+
+header img {
+    height: 50px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav a,
+.nav-dropdown span {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-dropdown input[type="checkbox"] {
+    display: none;
+    /* checkbox الخاص بالقائمة مخفي */
+}
+
+.dropdown-label {
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+    display: inline-block;
+    padding: 10px 15px;
+}
+
+
+/* تكبير الصندوق نفسه للقائمة لتظهر واضحة للمستخدم */
+
+.dropdown-menu {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background: #1b2129;
+    border: 2px solid #e7b144;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    min-width: 125px;
+    /* أكبر عرض للقائمة */
+    padding: 5px;
+    /* مساحة داخلية أكبر */
+    z-index: 10;
+}
+
+
+/* عرض القائمة عند الضغط على Services */
+
+#services-toggle:checked+.dropdown-label+.dropdown-menu {
+    display: flex;
+}
+
+
+/* تصميم كل عنصر في القائمة مع checkbox */
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    /* أكبر شويه من قبل */
+    cursor: pointer;
+}
+
+
+/* الدائرة الصغيرة الحجم متوسط */
+
+.menu-check {
+    width: 10px;
+    /* حجم صغير متوسط */
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-right: 8px;
+    accent-color: white;
+}
+
+
+/* الرابط */
+
+.menu-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    /* حجم مناسب */
+    flex: 1;
+}
+
+.menu-item a:hover {
+    color: #e7b144;
+}
+
+
+/* تصميم كل عنصر في القائمة مع checkbox */
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    /* padding متوسط */
+    cursor: pointer;
+}
+
+
+/* الدائرة الصغيرة الحجم متوسط */
+
+.menu-check {
+    width: 10px;
+    /* حجم صغير متوسط */
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-right: 8px;
+    accent-color: white;
+}
+
+
+/* الرابط */
+
+.menu-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    /* حجم مناسب */
+    flex: 1;
+}
+
+.menu-item a:hover {
+    color: #e7b144;
+}
+
+
+/* تصميم كل عنصر في القائمة مع checkbox */
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    /* أصغر padding */
+    cursor: pointer;
+}
+
+
+/* الدائرة الصغيرة الحجم متوسط */
+
+.menu-check {
+    width: 10px;
+    /* حجم صغير متوسط */
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-right: 8px;
+    accent-color: white;
+}
+
+
+/* الرابط */
+
+.menu-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    /* أصغر شوية */
+    flex: 1;
+}
+
+.menu-item a:hover {
+    color: #e7b144;
+}
+
+
+/* تصميم كل عنصر في القائمة مع checkbox */
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+/* الدائرة الصغيرة */
+
+.menu-check {
+    width: 12px;
+    height: 12px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-right: 10px;
+    accent-color: white;
+}
+
+
+/* الرابط */
+
+.menu-item a {
+    color: white;
+    text-decoration: none;
+    flex: 1;
+}
+
+.menu-item a:hover {
+    color: #e7b144;
+}
+
+.certificate-section {
+    margin: 60px 40px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+}
+
+.certificate-box {
+    width: 100%;
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+    border: 2px solid #e7b144;
+    border-radius: 15px;
+    background: #1b2129;
+}
+
+.certificate-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.certificate-info h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.certificate-info p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.download-btn {
+    width: fit-content;
+    padding: 10px 20px;
+    background: #e7b144;
+    color: #1b2129;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    background: #c69b3d;
+}
+
+.certificate-preview iframe {
+    width: 100%;
+    height: 500px;
+    border: 2px solid #e7b144;
+    border-radius: 12px;
+    background: #000;
+}
+
+.certificate-preview img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+
+/* FOOTER */
+
+.black-footer {
+    margin: 30px 40px;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #e7b144;
+    background: #1b2129;
+    position: relative;
+    z-index: 10;
+}
+
+.black-footer img {
+    height: 50px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+}
+
+//* FOOTER */
+.black-footer {
+    margin: 30px 40px;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #e7b144;
+    background: #1b2129;
+    position: relative;
+    z-index: 10;
+}
+
+
+/* الشعار على الشمال */
+
+.black-footer .footer-left img {
+    height: 50px;
+}
+
+
+/* السوشيال على اليمين تحت */
+
+.black-footer .footer-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.black-footer .hero-social a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 12px;
+}
+
+.black-footer .hero-social a:hover {
+    color: #e7b144;
+}
